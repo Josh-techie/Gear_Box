@@ -44,11 +44,12 @@ export default function MetricImperialTool() {
       cup_to_l: 0.236588,
       ml_to_l: 0.001,
       l_to_ml: 1000
-    },
-    temperature: {
-      c_to_f: (c: number) => (c * 9/5) + 32,
-      f_to_c: (f: number) => (f - 32) * 5/9
     }
+  };
+
+  const temperatureConversions = {
+    c_to_f: (c: number) => (c * 9/5) + 32,
+    f_to_c: (f: number) => (f - 32) * 5/9
   };
 
   const calculateConversion = () => {
@@ -97,7 +98,7 @@ export default function MetricImperialTool() {
         }
       } else if (conversionType === 'temperature') {
         if (metricUnit === '°C' && imperialUnit === '°F') {
-          setImperialValue(conversionFactors.temperature.c_to_f(value).toFixed(1));
+          setImperialValue(temperatureConversions.c_to_f(value).toFixed(1));
         }
       }
     } else {
@@ -146,7 +147,7 @@ export default function MetricImperialTool() {
         }
       } else if (conversionType === 'temperature') {
         if (imperialUnit === '°F' && metricUnit === '°C') {
-          setMetricValue(conversionFactors.temperature.f_to_c(value).toFixed(1));
+          setMetricValue(temperatureConversions.f_to_c(value).toFixed(1));
         }
       }
     }

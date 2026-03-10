@@ -244,7 +244,7 @@ export default function UnixTimestampTool() {
   };
 
   const commonTimestamps = [
-    { name: 'Now', value: Math.floor(Date.now() / 1000) },
+    { name: 'Now', value: Math.floor(currentTime / 1000) },
     { name: 'Unix Epoch', value: 0 },
     { name: 'Y2K', value: 946684800 },
     { name: 'Start of 2023', value: 1672531200 },
@@ -441,10 +441,10 @@ export default function UnixTimestampTool() {
             <strong>JavaScript Timestamp:</strong> Milliseconds since January 1, 1970 (UTC)
           </div>
           <div>
-            <strong>Current Unix Time:</strong> {Math.floor(Date.now() / 1000)}
+            <strong>Current Unix Time:</strong> {Math.floor(currentTime / 1000)}
           </div>
           <div>
-            <strong>Current JS Time:</strong> {Date.now()}
+            <strong>Current JS Time:</strong> {currentTime}
           </div>
         </div>
       </div>
